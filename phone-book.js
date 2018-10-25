@@ -91,10 +91,9 @@ function findAndRemove(query) {
 
 function hasPhoneByQuery(phoneNumber, query) {
     return query === '*' ||
-        phoneNumber.indexOf(query) !== -1 ||
-        phoneBook[phoneNumber].name.indexOf(query) !== -1 ||
-        (phoneBook[phoneNumber].email &&
-            phoneBook[phoneNumber].email.indexOf(query) !== -1);
+        phoneNumber.includes(query) ||
+        phoneBook[phoneNumber].name.includes(query) ||
+        (phoneBook[phoneNumber].email && phoneBook[phoneNumber].email.includes(query));
 }
 
 function mapFindResult(phoneNumber) {
